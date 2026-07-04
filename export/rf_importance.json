@@ -1,0 +1,132 @@
+{
+  "standard": [
+    {
+      "feature": "acousticness",
+      "importance": 0.11191
+    },
+    {
+      "feature": "instrumentalness",
+      "importance": 0.0982
+    },
+    {
+      "feature": "duration_min",
+      "importance": 0.09815
+    },
+    {
+      "feature": "danceability",
+      "importance": 0.09556
+    },
+    {
+      "feature": "speechiness",
+      "importance": 0.09407
+    },
+    {
+      "feature": "loudness",
+      "importance": 0.09285
+    },
+    {
+      "feature": "valence",
+      "importance": 0.09124
+    },
+    {
+      "feature": "energy",
+      "importance": 0.08716
+    },
+    {
+      "feature": "tempo",
+      "importance": 0.08715
+    },
+    {
+      "feature": "liveness",
+      "importance": 0.08014
+    },
+    {
+      "feature": "key",
+      "importance": 0.04028
+    },
+    {
+      "feature": "mode",
+      "importance": 0.00971
+    },
+    {
+      "feature": "time_signature",
+      "importance": 0.00719
+    },
+    {
+      "feature": "explicit",
+      "importance": 0.0064
+    }
+  ],
+  "permutation": [
+    {
+      "feature": "instrumentalness",
+      "importance": 0.07961,
+      "std": 0.00866
+    },
+    {
+      "feature": "acousticness",
+      "importance": 0.06627,
+      "std": 0.01241
+    },
+    {
+      "feature": "energy",
+      "importance": 0.03469,
+      "std": 0.00638
+    },
+    {
+      "feature": "speechiness",
+      "importance": 0.03125,
+      "std": 0.0085
+    },
+    {
+      "feature": "duration_min",
+      "importance": 0.03017,
+      "std": 0.00982
+    },
+    {
+      "feature": "valence",
+      "importance": 0.02818,
+      "std": 0.00796
+    },
+    {
+      "feature": "danceability",
+      "importance": 0.02452,
+      "std": 0.00491
+    },
+    {
+      "feature": "loudness",
+      "importance": 0.02017,
+      "std": 0.00254
+    },
+    {
+      "feature": "explicit",
+      "importance": 0.00789,
+      "std": 0.00402
+    },
+    {
+      "feature": "tempo",
+      "importance": 0.00534,
+      "std": 0.00162
+    },
+    {
+      "feature": "mode",
+      "importance": 0.00243,
+      "std": 0.00219
+    },
+    {
+      "feature": "liveness",
+      "importance": 0.002,
+      "std": 0.00145
+    },
+    {
+      "feature": "time_signature",
+      "importance": -0.00214,
+      "std": 0.00043
+    },
+    {
+      "feature": "key",
+      "importance": -0.003,
+      "std": 0.00177
+    }
+  ]
+}

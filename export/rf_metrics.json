@@ -1,0 +1,19 @@
+{
+  "model": "RandomForestRegressor",
+  "n_train": 65074,
+  "n_test": 16269,
+  "r2": 0.1441,
+  "rmse": 17.929,
+  "mae": 14.033,
+  "cv_scores": [
+    0.146,
+    0.1464,
+    0.15,
+    0.1473,
+    0.1509
+  ],
+  "cv_mean": 0.1481,
+  "cv_std": 0.002,
+  "stability": "STABIL",
+  "note": "Deduplizierte Song-Ebene, um Data Leakage zu vermeiden. Niedriges R^2 ist ein ehrliches Ergebnis: Audio-Features allein erklaeren Popularitaet nur begrenzt."
+}

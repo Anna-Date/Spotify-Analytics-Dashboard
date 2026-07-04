@@ -1,0 +1,72 @@
+[
+  {
+    "feature": "instrumentalness",
+    "pearson": -0.1876,
+    "spearman": -0.1923
+  },
+  {
+    "feature": "loudness",
+    "pearson": 0.1011,
+    "spearman": 0.0945
+  },
+  {
+    "feature": "danceability",
+    "pearson": 0.0959,
+    "spearman": 0.0843
+  },
+  {
+    "feature": "speechiness",
+    "pearson": -0.0699,
+    "spearman": -0.0922
+  },
+  {
+    "feature": "explicit",
+    "pearson": 0.0655,
+    "spearman": 0.0587
+  },
+  {
+    "feature": "duration_min",
+    "pearson": -0.0562,
+    "spearman": -0.0282
+  },
+  {
+    "feature": "time_signature",
+    "pearson": 0.0476,
+    "spearman": 0.0462
+  },
+  {
+    "feature": "acousticness",
+    "pearson": -0.0429,
+    "spearman": 0.0253
+  },
+  {
+    "feature": "liveness",
+    "pearson": -0.0358,
+    "spearman": -0.0278
+  },
+  {
+    "feature": "valence",
+    "pearson": 0.0209,
+    "spearman": 0.0205
+  },
+  {
+    "feature": "energy",
+    "pearson": 0.0063,
+    "spearman": -0.034
+  },
+  {
+    "feature": "mode",
+    "pearson": -0.0045,
+    "spearman": -0.0043
+  },
+  {
+    "feature": "key",
+    "pearson": 0.0033,
+    "spearman": 0.0038
+  },
+  {
+    "feature": "tempo",
+    "pearson": 0.0009,
+    "spearman": -0.0013
+  }
+]

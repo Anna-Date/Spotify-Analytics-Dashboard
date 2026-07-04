@@ -1,0 +1,77 @@
+[
+  {
+    "feature": "danceability",
+    "range": "0.0 - 1.0",
+    "erklaerung": "Wie gut sich ein Song zum Tanzen eignet (Tempo, Rhythmus, Beat). 1.0 = sehr tanzbar."
+  },
+  {
+    "feature": "energy",
+    "range": "0.0 - 1.0",
+    "erklaerung": "Intensitaet und Aktivitaet. Hohe Energie = schnell, laut, energisch (z.B. Metal)."
+  },
+  {
+    "feature": "loudness",
+    "range": "dB (meist -60 - 0)",
+    "erklaerung": "Gesamtlautstaerke in Dezibel. Hoehere (weniger negative) Werte = lauter."
+  },
+  {
+    "feature": "valence",
+    "range": "0.0 - 1.0",
+    "erklaerung": "Musikalische Positivitaet. Hoch = froehlich/euphorisch, niedrig = traurig/duester."
+  },
+  {
+    "feature": "acousticness",
+    "range": "0.0 - 1.0",
+    "erklaerung": "Wahrscheinlichkeit, dass der Song akustisch ist. Nahe 1.0 = akustisch."
+  },
+  {
+    "feature": "instrumentalness",
+    "range": "0.0 - 1.0",
+    "erklaerung": "Wahrscheinlichkeit, dass kein Gesang vorkommt. Nahe 1.0 = instrumental."
+  },
+  {
+    "feature": "speechiness",
+    "range": "0.0 - 1.0",
+    "erklaerung": "Anteil gesprochener Worte. >0.66 = fast nur Sprache, 0.33-0.66 = z.B. Rap, <0.33 = Musik."
+  },
+  {
+    "feature": "liveness",
+    "range": "0.0 - 1.0",
+    "erklaerung": "Wahrscheinlichkeit einer Live-Aufnahme (Publikum). >0.8 = sehr wahrscheinlich live."
+  },
+  {
+    "feature": "tempo",
+    "range": "BPM",
+    "erklaerung": "Geschwindigkeit in Schlaegen pro Minute (Beats per Minute)."
+  },
+  {
+    "feature": "duration_min",
+    "range": "Minuten",
+    "erklaerung": "Laenge des Songs in Minuten."
+  },
+  {
+    "feature": "key",
+    "range": "0 - 11",
+    "erklaerung": "Tonart (Pitch Class): 0=C, 1=C#/Db, 2=D, 3=D#/Eb, 4=E, 5=F, 6=F#/Gb, 7=G, 8=G#/Ab, 9=A, 10=A#/Bb, 11=H/B. -1 = nicht erkannt."
+  },
+  {
+    "feature": "mode",
+    "range": "0 oder 1",
+    "erklaerung": "Tongeschlecht: 1 = Dur (major), 0 = Moll (minor)."
+  },
+  {
+    "feature": "time_signature",
+    "range": "3 - 7",
+    "erklaerung": "Taktart: z.B. 3 = 3/4-Takt, 4 = 4/4-Takt (der haeufigste)."
+  },
+  {
+    "feature": "explicit",
+    "range": "true/false",
+    "erklaerung": "Ob der Song explizite (anstoessige) Texte enthaelt."
+  },
+  {
+    "feature": "popularity",
+    "range": "0 - 100",
+    "erklaerung": "Spotify-Popularitaet, v.a. aus Anzahl + Aktualitaet der Wiedergaben. 100 = sehr populaer. Beachte: neuere Songs sind oft im Vorteil."
+  }
+]

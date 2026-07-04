@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotify Analytics Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="/static/plotly.min.js" charset="utf-8"></script>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="logo">
+  <span class="logo-dot">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 9c5-1.5 10-1 14.5 1.5" stroke="#04110a" stroke-width="2" stroke-linecap="round"/>
+      <path d="M5 13c4-1 8-0.5 11.5 1.5" stroke="#04110a" stroke-width="2" stroke-linecap="round"/>
+      <path d="M6 16.5c3-0.7 6-0.3 8.5 1" stroke="#04110a" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </span>
+  Spotify Analytics
+</div>
+    <span class="spacer"></span>
+  
+  </header>
+
+  <!-- NAVIGATION (4 Seiten) -->
+  <nav class="nav">
+    <button class="active" data-page="overview">Überblick</button>
+    <button data-page="popularity">Popularität</button>
+    <button data-page="genres">Genres</button>
+    <button data-page="explorer">Track-Explorer</button>
+  </nav>
+
+  <!-- GLOBALE FILTERLEISTE -->
+  <div class="filterbar">
+    <label for="genreFilter">Genre</label>
+    <select id="genreFilter"><option value="__all__">Alle Genres</option></select>
+
+    <label for="popFilter">Min. Popularität: <span id="popVal">0</span></label>
+    <input type="range" id="popFilter" min="0" max="100" value="0" step="1" />
+
+    <button class="filter-reset" id="filterReset">Zurücksetzen</button>
+    <span class="filter-note" id="filterNote">Filter wirken auf die markierten Panels.</span>
+  </div>
+
+<!-- Spezielle Filterleiste NUR für Track-Explorer -->
+  <div class="filterbar" id="explorerBar" style="display:none">
+    <label for="expGenre">Genre</label>
+    <select id="expGenre"></select>
+
+    <label for="expSong">Song (Top 100 nach Popularität)</label>
+    <select id="expSong"></select>
+  </div>
+
+  <!-- Spezielle Filterleiste NUR für Genre-Seite -->
+  <div class="filterbar" id="genreBar" style="display:none">
+    <label for="genreRadarSel">Genre</label>
+    <select id="genreRadarSel"></select>
+  </div>
+
+  <!-- ============ SEITE 1: ÜBERBLICK ============ -->
+  <section class="page active" id="page-overview">
+   
+
+    <div class="kpi-row" id="kpiRow"><div class="loading">Kennzahlen werden geladen …</div></div>
+
+    <div class="grid">
+      <div class="panel col-7">
+        <h2>Top 10 Songs</h2>
+        <div id="top10Table"><div class="loading">wird geladen …</div></div>
+      </div>
+      <div class="panel col-5">
+        <h2>Populärste Genres</h2>
+        <div class="desc">Durchschnittliche Popularität je Genre – Top 12.</div>
+        <div id="topGenresPlot" class="plot" style="height:360px"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEITE 2: POPULARITÄT ============ -->
+  <section class="page" id="page-popularity">
+    <div class="page-intro">
+      <h1>Popularität</h1>
+      <p>Vergleich populärer vs. weniger populärer Songs, lineare Zusammenhänge und ein
+         Random-Forest-Modell, das prüft, welche Audio-Features Popularität erklären.</p>
+    </div>
+    <div class="grid">
+      <div class="panel col-6">
+        <h2>Populär vs. Rest — Effektgröße</h2>
+        <div class="desc">Standardisierte Mittelwert-Differenz (σ). Positiv = populäre Songs haben mehr davon.</div>
+        <div id="effectPlot" class="plot" style="height:420px"></div>
+      </div>
+      <div class="panel col-6">
+        <h2>Korrelation mit Popularität</h2>
+        <div id="popCorrPlot" class="plot" style="height:420px"></div>
+      </div>
+      <div class="panel col-8">
+        <h2>Random Forest — Feature Importance</h2>
+        <div class="desc">Permutation Importance (robust) vs. Standard-Importance. Welche Features erklären Popularität?</div>
+        <div id="rfImpPlot" class="plot" style="height:420px"></div>
+      </div>
+      <div class="panel col-4">
+        <h2>Modell-Güte & Stabilität</h2>
+        <div class="desc">Wie gut erklärt das Modell Popularität – und ist das Ergebnis stabil?</div>
+        <div id="rfMetrics"><div class="loading">wird geladen …</div></div>
+      </div>
+    </div>
+  </section>
+
+<!-- ============ SEITE 3: GENRES ============ -->
+  <section class="page" id="page-genres">
+
+    <!-- Reihe 1: Radar + Feature-Übersicht + Ähnlichste Genres -->
+    <div class="grid">
+      <div class="panel col-5">
+        <h2>Audio-Profil des Genres</h2>
+        <div id="genreRadar" class="plot" style="height:420px"></div>
+      </div>
+      <div class="panel col-4">
+        <h2>Feature-Übersicht</h2>
+        <div id="genreFeatureTable" class="glossary"></div>
+      </div>
+      <div class="panel col-3">
+        <h2>Ähnlichste Genres</h2>
+        <div id="genreSimilarPlot" class="plot" style="height:420px"></div>
+      </div>
+    </div>
+
+    <!-- Reihe 2: Genre-Map über volle Breite -->
+    <div class="grid" style="margin-top:var(--gap)">
+      <div class="panel col-12">
+        <h2>Genre-Map — welche Genres klingen ähnlich?</h2>
+        <div class="desc" id="genreMapDesc">Nähe = ähnlicher Klang. Farbe = Klang-Gruppe, Punktgröße = Ø Popularität.</div>
+        <div id="genreMapPlot" class="plot" style="height:480px"></div>
+      </div>
+    </div>
+
+    <!-- Reihe 3: Korrelationsmatrix links + Klang-Gruppen rechts -->
+    <div class="grid" style="margin-top:var(--gap)">
+      <div class="panel col-6">
+        <h2>Korrelationsmatrix der Features</h2>
+        <div class="desc">Welche Audio-Features hängen zusammen?</div>
+        <div id="corrMatrixPlot" class="plot" style="height:480px"></div>
+      </div>
+      <div class="panel col-6">
+        <h2>Klang-Gruppen erklärt</h2>
+        <div class="desc">Die Farben der Genre-Map – jede Gruppe ist eine Klang-Familie. Klick auf eine Gruppe zeigt ihre Genres.</div>
+        <div id="clusterLegend" class="cluster-legend"></div>
+      </div>
+    </div>
+
+  </section>
+  
+ <!-- ============ SEITE 4: TRACK-EXPLORER ============ -->
+  <section class="page" id="page-explorer">
+
+    <!-- OBEN: Radar links, Song-Info rechts -->
+    <div class="grid">
+      <div class="panel col-7">
+        <h2>Song vs. Genre-Durchschnitt</h2>
+        <div class="desc">Wie unterscheidet sich der Song von seinem Genre?</div>
+        <div id="songRadar" class="plot" style="height:500px"></div>
+      </div>
+      <div class="panel col-5">
+        <div id="songCard" class="song-card"><div class="loading">Bitte einen Song auswählen …</div></div>
+      </div>
+    </div>
+
+    <!-- UNTEN: Merkmale erklärt -->
+    <div class="grid" style="margin-top:var(--gap)">
+      <div class="panel col-12">
+        <h2>Merkmale erklärt</h2>
+        <div class="desc">Bedeutung der Audio-Features.</div>
+        <div id="glossaryTable" class="glossary" style="max-height:300px; overflow:auto"></div>
+      </div>
+    </div>
+  </section>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

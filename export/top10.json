@@ -1,0 +1,72 @@
+[
+  {
+    "track_name": "Unholy (feat. Kim Petras)",
+    "artists": "Sam Smith;Kim Petras",
+    "album_name": "Unholy (feat. Kim Petras)",
+    "track_genre": "dance",
+    "popularity": 100
+  },
+  {
+    "track_name": "Quevedo: Bzrp Music Sessions, Vol. 52",
+    "artists": "Bizarrap;Quevedo",
+    "album_name": "Quevedo: Bzrp Music Sessions, Vol. 52",
+    "track_genre": "hip-hop",
+    "popularity": 99
+  },
+  {
+    "track_name": "I'm Good (Blue)",
+    "artists": "David Guetta;Bebe Rexha",
+    "album_name": "I'm Good (Blue)",
+    "track_genre": "dance",
+    "popularity": 98
+  },
+  {
+    "track_name": "La Bachata",
+    "artists": "Manuel Turizo",
+    "album_name": "La Bachata",
+    "track_genre": "latin",
+    "popularity": 98
+  },
+  {
+    "track_name": "Me Porto Bonito",
+    "artists": "Bad Bunny;Chencho Corleone",
+    "album_name": "Un Verano Sin Ti",
+    "track_genre": "latin",
+    "popularity": 97
+  },
+  {
+    "track_name": "Tití Me Preguntó",
+    "artists": "Bad Bunny",
+    "album_name": "Un Verano Sin Ti",
+    "track_genre": "latin",
+    "popularity": 97
+  },
+  {
+    "track_name": "Efecto",
+    "artists": "Bad Bunny",
+    "album_name": "Un Verano Sin Ti",
+    "track_genre": "latin",
+    "popularity": 96
+  },
+  {
+    "track_name": "I Ain't Worried",
+    "artists": "OneRepublic",
+    "album_name": "I Ain’t Worried (Music From The Motion Picture \"Top Gun: Maverick\")",
+    "track_genre": "piano",
+    "popularity": 96
+  },
+  {
+    "track_name": "Under The Influence",
+    "artists": "Chris Brown",
+    "album_name": "Indigo (Extended)",
+    "track_genre": "dance",
+    "popularity": 96
+  },
+  {
+    "track_name": "As It Was",
+    "artists": "Harry Styles",
+    "album_name": "As It Was",
+    "track_genre": "pop",
+    "popularity": 95
+  }
+]

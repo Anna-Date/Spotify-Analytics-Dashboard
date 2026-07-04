@@ -1,0 +1,10 @@
+{
+  "n_songs": 81343,
+  "n_rows": 113549,
+  "n_genres": 115,
+  "n_artists": 31437,
+  "avg_popularity": 35.25,
+  "median_popularity": 35.0,
+  "popular_threshold": 61.0,
+  "popular_definition": "Top 10% (popularity >= 61.0)"
+}

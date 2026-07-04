@@ -1,0 +1,76 @@
+{
+  "n_popular": 8463,
+  "n_rest": 72880,
+  "features": [
+    {
+      "feature": "instrumentalness",
+      "popular": 0.0731,
+      "rest": 0.1977,
+      "difference": -0.1246,
+      "effect_size": -0.3758
+    },
+    {
+      "feature": "danceability",
+      "popular": 0.5964,
+      "rest": 0.555,
+      "difference": 0.0414,
+      "effect_size": 0.2329
+    },
+    {
+      "feature": "liveness",
+      "popular": 0.1804,
+      "rest": 0.2243,
+      "difference": -0.0439,
+      "effect_size": -0.2214
+    },
+    {
+      "feature": "loudness",
+      "popular": -7.668,
+      "rest": -8.7071,
+      "difference": 1.0391,
+      "effect_size": 0.1959
+    },
+    {
+      "feature": "acousticness",
+      "popular": 0.2753,
+      "rest": 0.336,
+      "difference": -0.0607,
+      "effect_size": -0.1786
+    },
+    {
+      "feature": "duration_min",
+      "popular": 3.6367,
+      "rest": 3.8823,
+      "difference": -0.2456,
+      "effect_size": -0.1265
+    },
+    {
+      "feature": "valence",
+      "popular": 0.4861,
+      "rest": 0.4607,
+      "difference": 0.0254,
+      "effect_size": 0.0964
+    },
+    {
+      "feature": "speechiness",
+      "popular": 0.0802,
+      "rest": 0.09,
+      "difference": -0.0098,
+      "effect_size": -0.084
+    },
+    {
+      "feature": "tempo",
+      "popular": 120.5857,
+      "rest": 122.5164,
+      "difference": -1.9307,
+      "effect_size": -0.065
+    },
+    {
+      "feature": "energy",
+      "popular": 0.6392,
+      "rest": 0.6344,
+      "difference": 0.0048,
+      "effect_size": 0.0186
+    }
+  ]
+}
