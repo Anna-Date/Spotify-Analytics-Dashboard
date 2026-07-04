@@ -53,8 +53,23 @@ flowchart TD
 ---
 
 ## 📁 Projektstruktur
-
-
+```
+New folder/
+├── spotify_clean.csv          # bereinigter Datensatz
+├── spotify.duckdb             # DuckDB-Datenbank
+│
+├── 01_eda_duckdb.py           # Datenbank & deskriptive Analysen
+├── 02_correlation.py          # Korrelationsmatrix & Korrelationen
+├── 03_random_forest.py        # Random-Forest-Modell + Cross-Validation
+├── 04_genre_similarity.py     # Genre-Ähnlichkeit, PCA + KMeans
+│
+├── export/                    # von den Skripten erzeugte JSON-Ergebnisse
+│
+└── dashboard/
+    ├── app.py                 # Flask-Server (liest aus ../export)
+    ├── static/                # app.js, style.css, plotly.min.js
+    └── templates/             # index.html
+```
 
 ---
 
