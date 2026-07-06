@@ -93,3 +93,20 @@ Das Projekt legt Wert auf saubere, nachvollziehbare Methodik:
 - **Permutation Importance** – robuster als die Standard-Feature-Importance, die bei korrelierten Features verzerrt.
 - **Cross-Validation** – prüft, ob die Modell-Ergebnisse stabil und representativ sind.
 - **PCA + KMeans** – reduziert die Audio-Features auf zwei Dimensionen und gruppiert Genres automatisch in Klang-Familien.
+
+---
+## Das Projekt beantwortet 13 Ausgangsfragen, die thematisch zu den vier Dashboard-Seiten zusammengefasst sind: 
+
+1. Top 10 Songs
+2. Welche Eigenschaften haben populäre Songs? (Top 10 % vs. Rest)
+3. Welche Genres haben die populärsten Songs? (Durchschnitt)
+4. Welche Features erklären Popularität wirklich? (Random Forest + Metriken + Kontingenztest)
+5. Welche Features korrelieren mit Popularität?
+6. Welche Genres sind ruhig oder energiegeladen? (Ähnlichkeit)
+7. Welche Features hängen zusammen? (Korrelationsmatrix)
+8. Wie unterscheiden sich populäre vs. weniger populäre Songs?
+9. Korrelationen zwischen Features
+10. Welche Features korrelieren mit Popularität?
+11. Welche Genres haben die populärsten Songs?
+12. Was macht einen Song beliebt?
+13. Track-Level Exploration (einzelnen Song ansehen)
